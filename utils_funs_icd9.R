@@ -2,12 +2,12 @@
 
 # load packages. Install if needed ----------------------------------------
 
-#install.packages("tidyverse")
-library(tidyverse)
-#install.packages("readxl")
-library(readxl)
-#install.packages("readxl")
-library(classInt)
+if (!require("tidyverse")) install.packages("tidyverse")
+
+if (!require("readxl")) install.packages("readxl")
+
+if (!require("classInt")) install.packages("classInt")
+
 
 # Create a new variable based on a regular expression pattern -------------
 # From https://github.com/injuryepi/overdoser/blob/master/R/od_create_diag.r
