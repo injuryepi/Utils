@@ -13,6 +13,6 @@ add_age8 <- function(data, age) {
 	
 	agegrp8 <- as.factor(findCols(int8))
 	
-	data %>% mutate(agegrp8 = agegrp8, age8 = fct_recode(agegrp6, `10_17` = "1",`18-24` = "2", `25-34` = "3", `35-44' = 4, '45-54' = 5, '55-64` = "6",`65-84` = "7", `85+` = "8"))
+	data %>% mutate(agegrp8 = agegrp8, age8 = fct_recode(agegrp8, `10_17` = "1",`18-24` = "2", `25-34` = "3", `35-44' = 4, '45-54' = 5, '55-64` = "6",`65-84` = "7", `85+` = "8"))
 
 }
