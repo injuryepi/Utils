@@ -9,7 +9,7 @@ add_age8 <- function(data, age) {
 	age <- data %>% pull(!!age)
 	
 	agecut8 <- c(10, 17, 24, 34, 44, 54, 64, 84, max(age, na.rm = T))
-	int8 <- classIntervals(age, n = 8, style = "fixed", fixedBreaks = agecut6, intervalClosure = "right")
+	int8 <- classIntervals(age, n = 8, style = "fixed", fixedBreaks = agecut8, intervalClosure = "right")
 	
 	agegrp8 <- as.factor(findCols(int8))
 	
