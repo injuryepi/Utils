@@ -1,3 +1,3 @@
 # Utils
 
-R Functions not included in the packages
+**R** Functions not included in the packages
