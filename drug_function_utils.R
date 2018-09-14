@@ -1,3 +1,11 @@
+## To  create fed fiscal years
+
+fed_fiscal_year <- function(date) {
+  # October 1, year_n to September 30, year_n+1
+  require(lubridate, quietly = T)
+  year(date %m+% months(3))
+}
+
 ## creating a new variable based on the regular expression from other fields
 
 od_create_diag <- function(data, expr, colvec, ignore.case = T, perl = T) {
