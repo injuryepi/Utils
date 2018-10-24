@@ -1,6 +1,6 @@
 ## get all drug overdose api
 
-get_ed_drug <- function(username, password, start_date, end_date, version = 1, site_no = 934, user_id = 515) {
+get_ed_drug <- function(username, password, start_date, end_date, version = 1, site_no, user_id) {
   require(httr, quietly = T)
   require(jsonlite, quietly = T)
   require(glue, quietly = T)
