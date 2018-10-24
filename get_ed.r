@@ -1,6 +1,6 @@
 ## get all ed api
 
-get_ed <- function(username, password, start_date, end_date, site_no = 934, user_id = 515) {
+get_ed <- function(username, password, start_date, end_date, site_no, user_id) {
   require(httr, quietly = T)
   require(jsonlite, quietly = T)
   require(glue, quietly = T)
