@@ -1,6 +1,6 @@
 # get ED time series
 
-get_ed_ts <- function(username, password, start_date, end_date, site_no = 934, user_id = 515) {
+get_ed_ts <- function(username, password, start_date, end_date, site_no, user_id) {
   
   
   require(httr, quietly = T)
