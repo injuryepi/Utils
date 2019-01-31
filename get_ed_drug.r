@@ -1,6 +1,6 @@
 ## get all drug overdose api
 
-get_ed_drug <- function(username, password, start_date, end_date, version = 1, site_no, user_id) {
+get_ed_drug <- function(username, password, start_date, end_date, version = 1, site_no, user_id, ...) {
   require(httr, quietly = T)
   require(jsonlite, quietly = T)
   require(glue, quietly = T)
@@ -17,6 +17,26 @@ get_ed_drug <- function(username, password, start_date, end_date, version = 1, s
   url <- gsub("(%20v)\\d+", glue("\\1{version}"), url)
   url <- gsub("(&site=)\\d+", glue("\\1{site_no}"), url)
   url <- gsub("(&userId=)\\d+", glue("\\1{user_id}"), url)
+  
+  ## select fields
+  
+  f_field <- function(url, ...){
+    
+    if(!length(list(...))){
+      field <- NULL
+    } 
+    else { 
+      field <- paste(paste0("&field=",list(...)), collapse="")   
+    }
+    
+    gsub("&detector", paste0(field, "&detector"), url)
+    
+    
+  }
+  
+  url <- f_field(url = url, ...)
+  
+  ##
   
   set_config(config(ssl_verifypeer = 0L))
   resp <- httr::GET(url = url, authenticate(username , password ))
